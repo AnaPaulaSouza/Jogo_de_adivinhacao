@@ -28,7 +28,7 @@ def verifica_se_acertou(numero_secreto, chute)
         puts "Parabêns. VOCÊ ACERTOU!"
         return true
     else 
-        maior = numero_secreto < chute.to_i
+        maior = numero_secreto > chute.to_i
         if maior
             puts "O número secreto maior"
             return false
