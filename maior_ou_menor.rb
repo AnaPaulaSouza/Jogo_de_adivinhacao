@@ -6,9 +6,9 @@ def boas_vindas
 end
 
 def sorteia_numero_secreto
-    puts "Sortiando um número secreto entre 0 e 200..."
-    sorteado = 175
-    puts "Número secreto sortiado... Que tal adivinha-lo?\n\n"
+    puts "Vamos sortiar um número secreto entre 0 e 200..."
+    sorteado = 1 + rand(200)
+    puts "Prontinho!!! Número secreto sortiado... Que tal adivinha-lo?\n\n"
     sorteado
 end
 
@@ -30,10 +30,10 @@ def verifica_se_acertou(numero_secreto, chute)
     else 
         maior = numero_secreto > chute.to_i
         if maior
-            puts "O número secreto maior"
+            puts "O número secreto é maior!"
             return false
         else 
-            puts "O número secreto menor!"
+            puts "O número secreto é menor!"
             return false
         end
     end
@@ -42,7 +42,7 @@ end
 boas_vindas
 numero_secreto = sorteia_numero_secreto
 
-limite_de_tentativas = 5
+limite_de_tentativas = 8
 
 for tentativa in 1..limite_de_tentativas
     chute = digite_um_numero(tentativa, limite_de_tentativas)
@@ -50,3 +50,5 @@ for tentativa in 1..limite_de_tentativas
         break
     end
 end
+
+puts "\n O número secreto é:" . numero_secreto
